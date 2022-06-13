@@ -1,0 +1,12 @@
+.card {
+  width: 91% !important;
+  overflow: hidden;
+  border-radius: 10px;
+}
+p {
+  margin: 0;
+  padding: 2px;
+}
+.cursor {
+  cursor: pointer;
+}

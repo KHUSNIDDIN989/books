@@ -1,0 +1,27 @@
+.navbar {
+  list-style: none;
+}
+ul {
+  margin: 0;
+}
+li {
+  font-weight: 500;
+  color: #242424;
+  cursor: pointer;
+  transition: 0.5s all linear;
+  list-style: none;
+}
+
+li:hover {
+  font-weight: 700;
+  font-size: 16.1px;
+}
+.hover {
+  border: 1px solid;
+}
+.hover:hover {
+  background: rgba(214, 211, 211, 0.274);
+}
+.hover1 {
+  background: #fff279;
+}
