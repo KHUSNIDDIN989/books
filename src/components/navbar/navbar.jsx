@@ -32,9 +32,18 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="buttons col-3 d-flex justify-content-center">
-          {!modal1 ? (
+          {modal1 ? (
             <>
-              <i className="bi bi-trash fs-1 mx-4"></i>
+              <i className="bi bi-heart fs-1">
+                <span className=" fs-6 fw-bold fst-normal rounded-circle bg-primary text-light px-2 position-absolute">
+                  0
+                </span>
+              </i>
+              <i className="bi bi-cart4 fs-1 mx-5">
+                <span className=" fs-6 fw-bold fst-normal rounded-circle bg-primary text-light px-2 position-absolute">
+                  0
+                </span>
+              </i>
               <i className="bi bi-person-circle fs-1"></i>
             </>
           ) : (

@@ -10,3 +10,6 @@ p {
 .cursor {
   cursor: pointer;
 }
+.card:hover {
+  box-shadow: 0 0 5px rgb(206, 204, 204);
+}

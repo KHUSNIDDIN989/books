@@ -10,6 +10,8 @@ import "./App.css";
 import Regstr from "./pages/regstr";
 import Login from "./pages/login";
 import Newbooks from "./pages/newbooks";
+import Recommendeds from "./pages/Recommendeds";
+import Childrenbooks from "./pages/childrenbooks";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/newbooks" element={<Newbooks />} />
+        <Route path="/recommended" element={<Recommendeds />} />
+        <Route path="/childrenbook" element={<Childrenbooks />} />
         <Route path="/exchange" element={<Exchange />} />
         <Route path="/temporarily" element={<Temporarily />} />
         <Route path="/sell" element={<Sell />} />
