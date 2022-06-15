@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container ">
         <div className="nav row justify-content-between align-items-center mt-5">
           <div className="logo col-3">
-            <h3 className="fs-3 fw-bold">Kitob Olami</h3>
+            <h3 className="fs-3 fw-bold text-light">Kitob Olami</h3>
           </div>
           <div className="nav__item col-6 h-100">
             <ul className="navbar  d-flex justify-content-between align-items-center h-100 ">
@@ -46,19 +46,19 @@ const Footer = () => {
           <div className="col-4">
             <div className="d-flex justify-content-between w-50">
               <div className="cursor bg-secondary rounded-circle px-2 py-1 d-flex justify-content-center align-items-center">
-                <i class="bi bi-telephone index"></i>
+                <i className="bi bi-telephone index"></i>
               </div>
 
               <div className="cursor bg-secondary rounded-circle px-2 py-1 d-flex justify-content-center align-items-center">
-                <i class="bi bi-telegram index"></i>
+                <i className="bi bi-telegram index"></i>
               </div>
 
               <div className="cursor bg-secondary rounded-circle px-2 py-1 d-flex justify-content-center align-items-center">
-                <i class="bi bi-instagram index"></i>
+                <i className="bi bi-instagram index"></i>
               </div>
             </div>
           </div>
-          <p className="">Design by Suges group</p>
+          <p className="">Design by KHUSNIDDIN989</p>
         </div>
       </footer>
     </div>

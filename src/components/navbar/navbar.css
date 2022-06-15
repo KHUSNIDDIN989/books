@@ -25,3 +25,12 @@ li:hover {
 .hover1 {
   background: #fff279;
 }
+a {
+  text-decoration: none;
+}
+.active {
+  border-bottom: 3px solid black;
+}
+.logo {
+  color: black;
+}

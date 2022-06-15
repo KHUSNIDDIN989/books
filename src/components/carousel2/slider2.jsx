@@ -1,6 +1,7 @@
 import Kitob from "../../utils/img/kitob.svg";
 import React, { Component } from "react";
 import Slider from "react-slick";
+import { Link } from "react-router-dom";
 
 export default class MultipleItems extends Component {
   render() {
@@ -16,7 +17,9 @@ export default class MultipleItems extends Component {
     };
     return (
       <div className="mt-5 row">
-        <h1 className="  text-start">Yangi Kitoblar</h1>
+        <Link to="/newbooks">
+          <h1 className="  text-start">Yangi Kitoblar</h1>
+        </Link>
 
         <Slider {...settings}>
           <div className="card">
