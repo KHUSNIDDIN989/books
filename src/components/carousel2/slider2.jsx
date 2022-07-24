@@ -21,16 +21,20 @@ const Slider2 = () => {
 
       <Slider {...settings}>
         <div className="card">
-          <img src={Kitob} alt="" className="img-fluid w-100" />
+          <Link to="/aboutbook">
+            <img src={Kitob} alt="" className="img-fluid w-100" />
+          </Link>
           <div className="px-3">
-            <h3 className="text-start">Ihyou Ulumid din</h3>
-            <p className="text-start">Abu Homid G’azzoliy</p>
-            <p className="text-start cursor text-primary">
-              Vaqtincha Almashtiraman
-            </p>
-            <p className="text-start ">
-              Holati: <span>O’rtacha</span>
-            </p>
+            <Link to="/aboutbook" className="text-dark">
+              <h3 className="text-start">Ihyou Ulumid din</h3>
+              <p className="text-start">Abu Homid G’azzoliy</p>
+              <p className="text-start cursor text-primary">
+                Vaqtincha Almashtiraman
+              </p>
+              <p className="text-start ">
+                Holati: <span>O’rtacha</span>
+              </p>
+            </Link>
             <div className="w-100 d-flex justify-content-end  mb-1">
               <i className="bi bi-heart mx-2 fs-4 cursor "></i>
               <i className="bi bi-cart4 mx-2 fs-4 cursor text-end "></i>

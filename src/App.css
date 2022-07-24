@@ -3,6 +3,8 @@ h1 {
 }
 .bg-yellow {
   background: #fffce4;
+  width: 100vw;
+  height: 100%;
 }
 .btn-color {
   background-color: #46af06;
@@ -10,4 +12,7 @@ h1 {
 }
 .vh-100 {
   height: 100vh;
+}
+.fs {
+  font-size: 70px !important;
 }

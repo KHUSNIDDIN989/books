@@ -1,54 +1,70 @@
-import "./navbar.css";
 import { useEffect, useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+import useToken from "../../hooks/useToken";
+
+import "./navbar.css";
 
 const Navbar = () => {
-  const [modal1, setModal1] = useState();
+  const [token] = useToken();
+
+  const [modal1, setModal1] = useState(null);
   useEffect(() => {
     setModal1(window.localStorage.getItem("token"));
   }, []);
   return (
     <>
-      <div className="nav row justify-content-between align-items-center mt-3">
-        <div className="logo col-3">
+      <div className="nav row justify-content-between align-items-center">
+        <div className="logo col-2 mt-2">
           <Link to="/">
             <h3 className="fs-3 fw-bold logo">Kitob Olami</h3>
           </Link>
         </div>
-        <div className="nav__item col-6 h-100">
-          <ul className="navbar  d-flex justify-content-between align-items-center h-100">
-            <NavLink to="/exchange">
-              <li className="nav-item"> Almashaman</li>
-            </NavLink>
-            <NavLink to="/temporarily">
-              <li className="nav-item">Vaqtincha almashaman</li>
-            </NavLink>
-            <NavLink to="/sell">
-              <li className="nav-item">Sotaman</li>
-            </NavLink>
-            <NavLink to="/gift">
-              <li className="nav-item">Hadyam</li>
-            </NavLink>
-          </ul>
+        <div className="col-6">
+          <form className="w-100" role="search">
+            <div className="input-group w-100">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="search"
+                aria-label="Recipient's username"
+                aria-describedby="button-addon2"
+              />
+              <button
+                className="btn btn-dark "
+                type="button"
+                id="button-addon2"
+              >
+                Izlash
+              </button>
+            </div>
+          </form>
         </div>
-        <div className="buttons col-3 d-flex justify-content-center">
-          {modal1 ? (
+        <div className="col-4 d-flex justify-content-end">
+          {token ? (
             <>
-              <i className="bi bi-heart fs-1">
-                <span className=" fs-6 fw-bold fst-normal rounded-circle bg-primary text-light px-2 position-absolute">
-                  0
-                </span>
-              </i>
-              <i className="bi bi-cart4 fs-1 mx-5">
-                <span className=" fs-6 fw-bold fst-normal rounded-circle bg-primary text-light px-2 position-absolute">
-                  0
-                </span>
-              </i>
-              <i className="bi bi-person-circle fs-1"></i>
+              <Link to="/sell" className="mx-4">
+                <i className="bi bi-plus-square fs-1 text-dark"></i>
+              </Link>
+              <Link to="/gift">
+                <i className="bi bi-bookmark-heart fs-1 text-dark">
+                  <span className=" fs-6 fw-bold fst-normal rounded-circle bg-primary text-light px-2 position-absolute">
+                    0
+                  </span>
+                </i>
+              </Link>
+
+              <Link to="/profile" className="ms-5">
+                <i className="bi bi-person-circle fs-1 text-dark"></i>
+              </Link>
             </>
           ) : (
             <>
-              <button className="btn border-hover  mx-2 hover1">Log In</button>
+              <Link to="/login">
+                <button className="btn border-hover  mx-2 hover1">
+                  Log In
+                </button>
+              </Link>
               <Link to="/regstr">
                 <button className="btn hover mx-2">Ro’yxatdan o’tish</button>
               </Link>

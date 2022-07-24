@@ -1,0 +1,12 @@
+.card_1 {
+  width: 97%;
+  background-color: rgb(255, 255, 255) !important;
+  border-radius: 10px;
+}
+.overflow {
+  height: 500px;
+  overflow-y: scroll;
+}
+.card_1:hover {
+  box-shadow: 0 0 5px rgb(206, 204, 204);
+}

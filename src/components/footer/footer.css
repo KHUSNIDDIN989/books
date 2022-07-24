@@ -1,6 +1,11 @@
 .footer {
   background: #242424;
   color: #fff;
+  /* position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0; */
+  flex: 1;
 }
 .index {
   z-index: 10;

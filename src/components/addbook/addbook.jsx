@@ -1,6 +1,6 @@
-import React from "react";
-
-const Selling = () => {
+import React, { useState } from "react";
+const AddBook = () => {
+  const [select, setSelect] = useState("");
   return (
     <div>
       <div className="modal1 my-5">
@@ -17,18 +17,48 @@ const Selling = () => {
             kitob janerini kiriting
           </label>
           <input type="text" className="form-control w-50" id="inputEmail2" />
-          <label htmlFor="inputEmail21" className="form-label mt-4">
-            kitob vaqtinchalik berish muddatini kiriting
-          </label>
-          <input type="text" className="form-control w-50" id="inputEmail2" />
           <label htmlFor="inputEmail3" className="form-label mt-4">
             kitob holatini kiriting
           </label>
-          <input type="text" className="form-control w-50" id="inputEmail3" />
+          <select name="" id="" className="form-select w-50">
+            <option value="">Yangi</option>
+            <option value="">O'rta</option>
+            <option value="">Eski</option>
+          </select>
           <label htmlFor="inputEmail3" className="form-label mt-4">
-            kitob Narhini kiriting
+            kitob joylash turi
           </label>
-          <input type="text" className="form-control w-25" id="inputEmail3" />
+          <select
+            name=""
+            id=""
+            className="form-select w-50"
+            onChange={(e) => setSelect(e.target.value)}
+          >
+            <option value="null">chose</option>
+            <option value="hadya qolaman">hadya qolaman</option>
+            <option value="kitob almashaman">kitob almashaman</option>
+            <option value="sotaman">sotaman</option>
+          </select>
+          <label htmlFor="inputEmail3" className="form-label mt-4">
+            kitob tilini talang
+          </label>
+          <select name="" id="" className="form-select w-50">
+            <option value="uz">uz</option>
+            <option value="ru">ru</option>
+            <option value="en">en</option>
+          </select>
+          {select == "sotaman" ? (
+            <>
+              <label htmlFor="inputEmail3" className="form-label mt-4">
+                kitob Narhini kiriting
+              </label>
+              <input
+                type="text"
+                className="form-control w-25"
+                id="inputEmail3"
+              />
+            </>
+          ) : null}
           <label htmlFor="inputEmail4" className="form-label mt-4">
             Kitobga oid rasimni kiriting
           </label>
@@ -52,4 +82,4 @@ const Selling = () => {
   );
 };
 
-export default Selling;
+export default AddBook;

@@ -1,18 +1,18 @@
 import React from "react";
 import Footer from "../components/footer/footer";
 import Navbar from "../components/navbar/navbar";
-import Vaqtincha from "../components/temporarilies/vaqtincha";
+import AddBook from "../components/addbook/addbook";
 
-const Temporarily = () => {
+const Addbooks = () => {
   return (
-    <div className="bg-yellow container-fluid">
+    <div className="container-fluid" style={{ background: "#fffce4" }}>
       <div className=" container py-1">
         <Navbar />
-        <Vaqtincha />
+        <AddBook />
       </div>
       <Footer />
     </div>
   );
 };
 
-export default Temporarily;
+export default Addbooks;
