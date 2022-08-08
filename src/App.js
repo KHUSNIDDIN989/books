@@ -4,6 +4,8 @@ import Exchange from "./pages/exchange";
 import Main from "./pages/main";
 import Gift from "./pages/gift";
 import Regstr from "./pages/regstr";
+
+import "./App.css";
 import Login from "./pages/login";
 import Newbooks from "./pages/newbooks";
 import Recommendeds from "./pages/Recommendeds";
@@ -19,7 +21,7 @@ function App() {
     <div className="App container-fluid">
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/aboutbook" element={<Aboutbook />} />
+        <Route path="/aboutbook/:id" element={<Aboutbook />} />
         <Route path="/newbooks" element={<Newbooks />} />
         <Route path="/recommended" element={<Recommendeds />} />
         <Route path="/childrenbook" element={<Childrenbooks />} />

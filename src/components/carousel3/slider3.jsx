@@ -1,141 +1,78 @@
-import Kitob from "../../utils/img/kitob.svg";
+import { useState, useEffect } from "react";
 import Slider from "react-slick";
+import { getApi } from "../../utils/Api/Api";
+import useData from "../../hooks/useData";
+
 import { Link } from "react-router-dom";
 
 const Slider3 = () => {
+  const [data1, setData1] = useState([]);
+  const [data, setData] = useData();
   const settings = {
     infinite: true,
-    speed: 500,
-    autoplaySpeed: 3000,
+    speed: 1200,
+    autoplaySpeed: 2500,
     focusOnSelect: true,
-    autoplay: true,
+    autoplay: false,
     slidesToShow: 4,
     slidesToScroll: 3,
     pauseOnHover: true,
   };
+  useEffect(() => {
+    getApi(`bookOrta`).then((res) => setData1(res.data));
+  }, []);
+
+  const handleCount = (e) => {
+    setData(e.target.id);
+  };
+
   return (
     <div className="mt-5 row">
       <Link to="/recommended">
-        <h1 className="  text-start">Tavsiya etilgan Kitoblar</h1>
+        <h1 className="  text-start">O'rta darajadagi Kitoblar</h1>
       </Link>
 
       <Slider {...settings}>
-        <div className="card">
-          <img src={Kitob} alt="" className="img-fluid w-100" />
-          <div className="px-3">
-            <h3 className="text-start">Ihyou Ulumid din</h3>
-            <p className="text-start">Abu Homid G’azzoliy</p>
-            <p className="text-start cursor text-primary">
-              Vaqtincha Almashtiraman
-            </p>
-            <p className="text-start ">
-              Holati: <span>O’rtacha</span>
-            </p>
-            <div className="w-100 d-flex justify-content-end  mb-1">
-              <i className="bi bi-heart mx-2 fs-4 cursor "></i>
-              <i className="bi bi-cart4 mx-2 fs-4 cursor text-end "></i>
+        {data1 &&
+          data1.map((e) => (
+            <div className="card " key={e.book_id}>
+              <Link
+                onClick={(e) => handleCount(e)}
+                to={`/aboutbook/${e.book_id}`}
+              >
+                <img
+                  src={e.book_img}
+                  alt=""
+                  className="img-fluid w-100"
+                  id={e.book_id}
+                />
+              </Link>
+              <div className="px-3">
+                <Link
+                  to="/aboutbook"
+                  className="text-dark"
+                  onClick={(e) => handleCount(e.target.id)}
+                >
+                  <h3 id={e.book_id} className="text-start mt-3">
+                    {e.book_title}
+                  </h3>
+                  <p id={e.book_id} className="text-start">
+                    {e.book_athor}
+                  </p>
+                  <p id={e.book_id} className="text-start cursor text-primary">
+                    {e.book_select}
+                  </p>
+                  <p id={e.book_id} className="text-start ">
+                    Holati: <span>{e.book_status}</span>
+                  </p>
+                </Link>
+                <div className="w-100 d-flex justify-content-end  mb-1">
+                  <i className="bi bi-heart mx-2 fs-4 cursor "></i>
+                  <i className="bi bi-cart4 mx-2 fs-4 cursor text-end "></i>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div className="card">
-          <img src={Kitob} alt="" className="img-fluid w-100" />
-          <div className="px-3">
-            <h3 className="text-start">Ihyou Ulumid din</h3>
-            <p className="text-start">Abu Homid G’azzoliy</p>
-            <p className="text-start cursor">Vaqtincha Almashtiraman</p>
-            <p className="text-start mb-3">
-              Holati: <span>O’rtacha</span>
-            </p>
-          </div>
-        </div>
-        <div className="card">
-          <img src={Kitob} alt="" className="img-fluid w-100" />
-          <div className="px-3">
-            <h3 className="text-start">Ihyou Ulumid din</h3>
-            <p className="text-start">Abu Homid G’azzoliy</p>
-            <p className="text-start cursor">Vaqtincha Almashtiraman</p>
-            <p className="text-start mb-3">
-              Holati: <span>O’rtacha</span>
-            </p>
-          </div>
-        </div>
-        <div className="card">
-          <img src={Kitob} alt="" className="img-fluid w-100" />
-          <div className="px-3">
-            <h3 className="text-start">Ihyou Ulumid din</h3>
-            <p className="text-start">Abu Homid G’azzoliy</p>
-            <p className="text-start cursor">Vaqtincha Almashtiraman</p>
-            <p className="text-start mb-3">
-              Holati: <span>O’rtacha</span>
-            </p>
-          </div>
-        </div>
-        <div className="card">
-          <img src={Kitob} alt="" className="img-fluid w-100" />
-          <div className="px-3">
-            <h3 className="text-start">Ihyou Ulumid din</h3>
-            <p className="text-start">Abu Homid G’azzoliy</p>
-            <p className="text-start cursor">Vaqtincha Almashtiraman</p>
-            <p className="text-start mb-3">
-              Holati: <span>O’rtacha</span>
-            </p>
-          </div>
-        </div>
-        <div className="card">
-          <img src={Kitob} alt="" className="img-fluid w-100" />
-          <div className="px-3">
-            <h3 className="text-start">Ihyou Ulumid din</h3>
-            <p className="text-start">Abu Homid G’azzoliy</p>
-            <p className="text-start cursor">Vaqtincha Almashtiraman</p>
-            <p className="text-start mb-3">
-              Holati: <span>O’rtacha</span>
-            </p>
-          </div>
-        </div>
-        <div className="card">
-          <img src={Kitob} alt="" className="img-fluid w-100" />
-          <div className="px-3">
-            <h3 className="text-start">Ihyou Ulumid din</h3>
-            <p className="text-start">Abu Homid G’azzoliy</p>
-            <p className="text-start cursor">Vaqtincha Almashtiraman</p>
-            <p className="text-start mb-3">
-              Holati: <span>O’rtacha</span>
-            </p>
-          </div>
-        </div>
-        <div className="card">
-          <img src={Kitob} alt="" className="img-fluid w-100" />
-          <div className="px-3">
-            <h3 className="text-start">Ihyou Ulumid din</h3>
-            <p className="text-start">Abu Homid G’azzoliy</p>
-            <p className="text-start cursor">Vaqtincha Almashtiraman</p>
-            <p className="text-start mb-3">
-              Holati: <span>O’rtacha</span>
-            </p>
-          </div>
-        </div>
-        <div className="card">
-          <img src={Kitob} alt="" className="img-fluid w-100" />
-          <div className="px-3">
-            <h3 className="text-start">Ihyou Ulumid din</h3>
-            <p className="text-start">Abu Homid G’azzoliy</p>
-            <p className="text-start cursor">Vaqtincha Almashtiraman</p>
-            <p className="text-start mb-3">
-              Holati: <span>O’rtacha</span>
-            </p>
-          </div>
-        </div>
-        <div className="card">
-          <img src={Kitob} alt="" className="img-fluid w-100" />
-          <div className="px-3">
-            <h3 className="text-start">Ihyou Ulumid din</h3>
-            <p className="text-start">Abu Homid G’azzoliy</p>
-            <p className="text-start cursor">Vaqtincha Almashtiraman</p>
-            <p className="text-start mb-3">
-              Holati: <span>O’rtacha</span>
-            </p>
-          </div>
-        </div>
+          ))}
       </Slider>
     </div>
   );

@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 
 import App from "./App";
 import { AuthContex } from "./contexts/AuthContex";
+import { UserContex } from "./contexts/UserContex";
 
 import "./index.css";
 
@@ -12,7 +13,9 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <AuthContex>
-        <App />
+        <UserContex>
+          <App />
+        </UserContex>
       </AuthContex>
     </BrowserRouter>
   </React.StrictMode>

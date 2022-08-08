@@ -43,7 +43,7 @@ const Navbar = () => {
         <div className="col-4 d-flex justify-content-end">
           {token ? (
             <>
-              <Link to="/sell" className="mx-4">
+              <Link to="/AddBooks" className="mx-4">
                 <i className="bi bi-plus-square fs-1 text-dark"></i>
               </Link>
               <Link to="/gift">

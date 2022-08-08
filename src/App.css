@@ -16,3 +16,6 @@ h1 {
 .fs {
   font-size: 70px !important;
 }
+.disabled {
+  display: none;
+}
